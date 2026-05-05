@@ -1,0 +1,6 @@
+@EarlyCareersPortal.Api_HostAddress = http://localhost:5037
+
+GET {{EarlyCareersPortal.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
