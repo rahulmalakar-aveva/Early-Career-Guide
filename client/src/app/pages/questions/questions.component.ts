@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 
@@ -16,9 +16,12 @@ import { ApiService } from '../../services/api.service';
 export class QuestionsComponent implements OnInit {
   posts: any[] = [];
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
-    this.api.getPosts('junior').subscribe((x: any) => this.posts = x);
+    this.api.getPosts('junior').subscribe((x: any) => {
+      this.posts = x;
+      this.cdr.markForCheck();
+    });
   }
 }

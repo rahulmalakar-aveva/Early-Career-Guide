@@ -15,7 +15,19 @@ export class ApiService {
     return this.http.get<any[]>(`${this.base}/qna`);
   }
 
+  createQna(question: string) {
+    return this.http.post<any>(`${this.base}/qna`, { question });
+  }
+
+  answerQna(id: string, answer: string) {
+    return this.http.put<any>(`${this.base}/qna/${id}/answer`, { answer });
+  }
+
+  deleteQna(id: string) {
+    return this.http.delete(`${this.base}/qna/${id}`);
+  }
+
   getPosts(type: string) {
-    return this.http.get<any[]>(`${this.base}/posts?type=${type}`);
+    return this.http.get<any[]>(`${this.base}/posts/${type}`);
   }
 }
