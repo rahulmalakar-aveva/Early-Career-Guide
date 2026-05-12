@@ -3,6 +3,7 @@ using EarlyCareersPortal.Application.Services;
 using EarlyCareersPortal.Infrastructure.Persistence;
 using EarlyCareersPortal.Infrastructure.SeedData;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +13,9 @@ builder.Services.AddSwaggerGen();
 
 // DB
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseInMemoryDatabase("EarlyCareersDb"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Services
-builder.Services.AddScoped<IUsefulLinkService, UsefulLinkService>();
 builder.Services.AddScoped<IQnaService, QnaService>();
 builder.Services.AddScoped<IPostService, PostService>();
 
@@ -35,10 +35,14 @@ app.UseSwaggerUI();
 
 app.MapControllers();
 
-// Seed
+// Seed and apply migrations
 using (var scope = app.Services.CreateScope())
 {
-    SeedData.Initialize(scope.ServiceProvider);
+    var services = scope.ServiceProvider;
+    var db = services.GetRequiredService<AppDbContext>();
+    // apply any pending migrations
+    db.Database.Migrate();
+    SeedData.Initialize(services);
 }
 
 app.Run();
