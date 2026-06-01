@@ -10,4 +10,5 @@ public class AppDbContext : DbContext
     public DbSet<QnaItem> QnaItems => Set<QnaItem>();
     public DbSet<BlogPost> BlogPosts => Set<BlogPost>();
     public DbSet<UsefulLink> UsefulLinks => Set<UsefulLink>();
+    public DbSet<Contact> Contacts => Set<Contact>();
 }

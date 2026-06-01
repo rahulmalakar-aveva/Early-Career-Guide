@@ -63,7 +63,9 @@ import { Observable } from 'rxjs';
 
           <!-- Dynamic Cards from API -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div *ngFor="let l of filteredLinks$ | async"
+            <a *ngFor="let l of filteredLinks$ | async"
+                 [href]="l.url"
+                 target="_blank"
                  class="bg-surface-container-lowest rounded-lg p-6 shadow-[0px_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/20 flex flex-col h-full hover:shadow-[0px_8px_24px_rgba(0,0,0,0.1)] transition-shadow cursor-pointer group">
               <div class="flex items-start gap-4 mb-4">
                 <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0">
@@ -78,25 +80,9 @@ import { Observable } from 'rxjs';
                 <span class="font-label-md text-label-md text-primary">View Resource</span>
                 <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </div>
-            </div>
+            </a>
 
-            <!-- Static resource cards -->
-            <div class="bg-surface-container-lowest rounded-lg p-6 shadow-[0px_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/20 flex flex-col h-full hover:shadow-[0px_8px_24px_rgba(0,0,0,0.1)] transition-shadow cursor-pointer group">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0">
-                  <span class="material-symbols-outlined text-3xl">menu_book</span>
-                </div>
-                <div>
-                  <h3 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-primary transition-colors">Onboarding Guide</h3>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Your complete guide to surviving and thriving in your first 30 days.</p>
-                </div>
-              </div>
-              <div class="mt-auto pt-4 border-t border-outline-variant/20 flex items-center justify-between">
-                <span class="font-label-md text-label-md text-primary">View Resource</span>
-                <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </div>
-            </div>
-
+            <!-- Static Company Handbook card -->
             <div class="bg-surface-container-lowest rounded-lg p-6 shadow-[0px_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/20 flex flex-col h-full hover:shadow-[0px_8px_24px_rgba(0,0,0,0.1)] transition-shadow cursor-pointer group">
               <div class="flex items-start gap-4 mb-4">
                 <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary shrink-0">
@@ -105,38 +91,6 @@ import { Observable } from 'rxjs';
                 <div>
                   <h3 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-primary transition-colors">Company Handbook</h3>
                   <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Our mission, values, and the rules of the road for all employees.</p>
-                </div>
-              </div>
-              <div class="mt-auto pt-4 border-t border-outline-variant/20 flex items-center justify-between">
-                <span class="font-label-md text-label-md text-primary">View Resource</span>
-                <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </div>
-            </div>
-
-            <div class="bg-surface-container-lowest rounded-lg p-6 shadow-[0px_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/20 flex flex-col h-full hover:shadow-[0px_8px_24px_rgba(0,0,0,0.1)] transition-shadow cursor-pointer group">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-tertiary-container shrink-0">
-                  <span class="material-symbols-outlined text-3xl">badge</span>
-                </div>
-                <div>
-                  <h3 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-primary transition-colors">HR Portal</h3>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Manage your benefits, time off, and payroll information.</p>
-                </div>
-              </div>
-              <div class="mt-auto pt-4 border-t border-outline-variant/20 flex items-center justify-between">
-                <span class="font-label-md text-label-md text-primary">View Resource</span>
-                <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </div>
-            </div>
-
-            <div class="bg-surface-container-lowest rounded-lg p-6 shadow-[0px_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/20 flex flex-col h-full hover:shadow-[0px_8px_24px_rgba(0,0,0,0.1)] transition-shadow cursor-pointer group">
-              <div class="flex items-start gap-4 mb-4">
-                <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container shrink-0">
-                  <span class="material-symbols-outlined text-3xl">laptop_mac</span>
-                </div>
-                <div>
-                  <h3 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-primary transition-colors">IT Support</h3>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Submit tickets for hardware or software issues.</p>
                 </div>
               </div>
               <div class="mt-auto pt-4 border-t border-outline-variant/20 flex items-center justify-between">

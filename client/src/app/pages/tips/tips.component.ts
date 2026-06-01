@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 
 @Component({
@@ -15,7 +16,7 @@ import { ApiService } from '../../services/api.service';
           <h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface mb-2">Q&A Forum &amp; Tips</h1>
           <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Ask questions, share insights, and discover daily tips to accelerate your onboarding journey.</p>
         </div>
-        <button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg flex items-center gap-2 transition-colors shadow-sm hover:shadow-md">
+        <button (click)="navigateToQna()" class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg flex items-center gap-2 transition-colors shadow-sm hover:shadow-md">
           <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">add</span>
           Ask a Question
         </button>
@@ -188,7 +189,7 @@ export class TipsComponent implements OnInit {
   posts: any[] = [];
   searchTerm = '';
 
-  constructor(private api: ApiService, private cdr: ChangeDetectorRef) {}
+  constructor(private api: ApiService, private cdr: ChangeDetectorRef, private router: Router) {}
 
   get filteredPosts() {
     if (!this.searchTerm) return this.posts;
@@ -204,5 +205,9 @@ export class TipsComponent implements OnInit {
       this.posts = x;
       this.cdr.markForCheck();
     });
+  }
+
+  navigateToQna() {
+    this.router.navigate(['/qna']);
   }
 }

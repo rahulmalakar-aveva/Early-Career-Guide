@@ -20,6 +20,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IQnaService, QnaService>();
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IUsefulLinkService, UsefulLinkService>();
+builder.Services.AddScoped<IContactService, ContactService>();
 
 // CORS
 builder.Services.AddCors(options =>
@@ -55,7 +56,8 @@ using (var scope = app.Services.CreateScope())
             new UsefulLink { Id = Guid.NewGuid(), Title = "HR Portal", Url = "https://hr.aveva.com", Category = "HR", Description = "Leave requests, payslips, and HR services" },
             new UsefulLink { Id = Guid.NewGuid(), Title = "IT Support", Url = "https://itsupport.aveva.com", Category = "IT", Description = "Raise tickets for hardware, software, and access issues" },
             new UsefulLink { Id = Guid.NewGuid(), Title = "Confluence Wiki", Url = "https://confluence.aveva.com", Category = "Documentation", Description = "Internal documentation and team wikis" },
-            new UsefulLink { Id = Guid.NewGuid(), Title = "GitHub Enterprise", Url = "https://github.aveva.com", Category = "Development", Description = "Source code repositories and CI/CD pipelines" }
+            new UsefulLink { Id = Guid.NewGuid(), Title = "GitHub Enterprise", Url = "https://github.aveva.com", Category = "Development", Description = "Source code repositories and CI/CD pipelines" },
+            new UsefulLink { Id = Guid.NewGuid(), Title = "Onboarding Guide", Url = "https://aveva.oak.com/Home/Index/efd5f51d-6268-4705-9e0c-dd6453532b40", Category = "Onboarding", Description = "Your complete guide to surviving and thriving in your first 30 days" }
         );
         db.SaveChanges();
     }

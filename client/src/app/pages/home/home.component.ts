@@ -59,7 +59,7 @@ import { RouterLink } from '@angular/router';
             </div>
             <span class="font-label-sm text-label-sm text-on-surface">Ask a Question</span>
           </a>
-          <a class="bg-surface-container-lowest rounded-lg p-unit-md flex flex-col items-center justify-center gap-3 ambient-shadow hover-lift border border-transparent hover:border-primary/20 text-center" href="#">
+          <a class="bg-surface-container-lowest rounded-lg p-unit-md flex flex-col items-center justify-center gap-3 ambient-shadow hover-lift border border-transparent hover:border-primary/20 text-center" routerLink="/contacts">
             <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary">
               <span class="material-symbols-outlined">contact_page</span>
             </div>
