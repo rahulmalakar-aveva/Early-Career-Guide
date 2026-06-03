@@ -30,4 +30,12 @@ export class ApiService {
   getPosts(type: string) {
     return this.http.get<any[]>(`${this.base}/posts/${type}`);
   }
+
+  getContacts() {
+    return this.http.get<any[]>(`${this.base}/contacts`);
+  }
+
+  createContact(name: string, email: string) {
+    return this.http.post<any>(`${this.base}/contacts`, { name, email });
+  }
 }
