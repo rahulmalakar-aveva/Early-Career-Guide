@@ -1,17 +1,31 @@
-# Add Who To Contact Feature
+# Add FAQs Feature with Accordion Interface
 
-**Summary:** This PR adds a new "Who To Contact" page where users can view team members and mentors, and add their own contact information.
+**Summary:** This PR adds a comprehensive FAQ section where users can browse frequently asked questions organized by category with an expandable accordion interface.
 
 ## Changes
-- ✅ Backend API for managing contacts (GET/POST endpoints)
-- ✅ Database migration and seeded contacts
-- ✅ Angular frontend page with list view and add form
+
+### Backend (.NET)
+- ✅ Created Faq entity, DTO, service, and controller
+- ✅ Database migration for Faqs table
+- ✅ Seeded 8 FAQs across 4 categories
+
+### Frontend (Angular)  
+- ✅ Accordion-style FAQs component with expand/collapse
+- ✅ Category filtering sidebar
+- ✅ Help section with links to Q&A and Contacts
 - ✅ Routing integration with home page
 
-## Initial Contacts
-- Basha Shaik (basha.shaik@aveva.com)
-- Prashanth Nidamarthy (prashanth.nidamarthy@aveva.com)
-- Liya A R (liya.ar@aveva.com)
+## FAQ Categories
+- **Onboarding** - Team assignment, workstation setup
+- **General** - Working hours, time off
+- **Learning** - Training resources, mentorship
+- **Benefits/Facilities** - Benefits access, office access
+
+## API Endpoints
+- `GET /api/faqs` - All FAQs
+- `GET /api/faqs/category/{category}` - FAQs by category
 
 ## Testing
-✅ Tested locally - API and UI working as expected
+✅ Tested locally - API and UI working as expected  
+✅ 8 FAQs properly seeded and displayed  
+✅ Category filtering and accordion interface functional
