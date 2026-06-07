@@ -1,7 +1,6 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-contacts',
@@ -11,42 +10,49 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./contacts.css']
 })
 export class ContactsComponent implements OnInit {
-  contacts = signal<any[]>([]);
+  contacts: any[] = [
+    {
+      id: 1,
+      name: 'Basha Shaik',
+      email: 'basha.shaik@aveva.com',
+      role: 'Team Member',
+      department: 'Engineering'
+    },
+    {
+      id: 2,
+      name: 'Prashanth Nidamarthy',
+      email: 'prashanth.nidamarthy@aveva.com',
+      role: 'Team Member',
+      department: 'Engineering'
+    },
+    {
+      id: 3,
+      name: 'Liya A R',
+      email: 'liya.ar@aveva.com',
+      role: 'Team Member',
+      department: 'Engineering'
+    }
+  ];
   newName = '';
   newEmail = '';
   showAddForm = false;
 
-  constructor(private api: ApiService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.loadContacts();
-  }
-
-  loadContacts() {
-    this.api.getContacts().subscribe({
-      next: (data) => {
-        console.log('Contacts loaded:', data);
-        this.contacts.set(data);
-      },
-      error: (err) => {
-        console.error('Error loading contacts:', err);
-      }
-    });
-  }
+  ngOnInit() {}
 
   addContact() {
     if (this.newName.trim() && this.newEmail.trim()) {
-      this.api.createContact(this.newName, this.newEmail).subscribe({
-        next: () => {
-          this.loadContacts();
-          this.newName = '';
-          this.newEmail = '';
-          this.showAddForm = false;
-        },
-        error: (err) => {
-          console.error('Error adding contact:', err);
-        }
+      this.contacts.push({
+        id: this.contacts.length + 1,
+        name: this.newName,
+        email: this.newEmail,
+        role: 'New Contact',
+        department: 'General'
       });
+      this.newName = '';
+      this.newEmail = '';
+      this.showAddForm = false;
     }
   }
 

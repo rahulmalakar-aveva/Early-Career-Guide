@@ -21,6 +21,7 @@ builder.Services.AddScoped<IQnaService, QnaService>();
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<IUsefulLinkService, UsefulLinkService>();
 builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<IFaqService, FaqService>();
 
 // CORS
 builder.Services.AddCors(options =>

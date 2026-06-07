@@ -2,7 +2,6 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-tips',
@@ -68,37 +67,6 @@ import { ApiService } from '../../services/api.service';
             <a class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline cursor-pointer">
               Read more <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
             </a>
-          </div>
-
-          <!-- Top Contributors -->
-          <div class="glass-card rounded-xl p-unit-md">
-            <h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4">Top Contributors</h3>
-            <div class="flex flex-col gap-3">
-              <div class="flex items-center gap-3">
-                <img alt="Alec Johnson" class="w-8 h-8 rounded-full object-cover"
-                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuASKawsWsfnQynMfidJk7l_sBxcabjDN3z792XAAbI52b_7uqaCR-Qou36kP3APhqREfs9Kjsxkw2tJcl0Wa1u1L9Yf4gYFE51OmItBQ4HJM5erzRVgOgrfeLG7C81rimuUWyY6fU_Y5q-G_d5RI9jDxEEoJLKZv2SAA0ImMUIR60W1wdBfciCrkFOaaZbIPwX869exHZFNk039RZp93E-03jsvMquqsOpU5G4hwEWGFvfEwZ0sOLtoD8zcWcXG_VY2W3tJgC2GXw" />
-                <div>
-                  <p class="font-body-sm text-body-sm font-medium text-on-surface leading-tight">Alec Johnson</p>
-                  <p class="text-xs text-on-surface-variant">Senior Engineer &bull; 42 answers</p>
-                </div>
-              </div>
-              <div class="flex items-center gap-3">
-                <img alt="Priya Sharma" class="w-8 h-8 rounded-full object-cover"
-                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzCwBehQLO-3BYluwrvAUNC0CzrUQiHlA6XAHPPmpsnBJlTp5E0lJjlhOXF-aMRmgSYkpEQEeF7sw1si_JeoBjDKOrIGdyWGSatbo3MZ5YlQEItp_c2CVFC7IF2XMfp4yTm1R7zjStipEezzOtSq6Wv7fK0wTZ7Y61261OIKLOPZcCPZhPZ3PQyWZNKuNAGv5uNz5hbYgPgdu7FjifvG3dTpS-55RUGiCQbOTCjMssmHjPZnnk3dgFMvYC7Ggy3XYuXfTr5I8epw" />
-                <div>
-                  <p class="font-body-sm text-body-sm font-medium text-on-surface leading-tight">Priya Sharma</p>
-                  <p class="text-xs text-on-surface-variant">Lead Engineer &bull; 38 answers</p>
-                </div>
-              </div>
-              <div class="flex items-center gap-3">
-                <img alt="Rahul Verma" class="w-8 h-8 rounded-full object-cover"
-                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWEGv_Z2pf66m00Z9eteqGr_ZvKmMQR86TOYanGOdoxMBP7gRSIuP9_OiYDDeVa1mhx_xMP7fFY5NEVi-wIOgrnAYfxqQqasi9kzaoVygZwjMD_6G7Ouw0iT5ZGrU9Aeaw6jPZtHWoUYhMCObzmmfbWyT8bIVr3CWu0REHrgA4BRsXRwJXDGDajQvWtjnUK0ZQGXDxA979HFhgN1Gq_n1i8r9tv9-jNRN-OI87Zr2FHJ6_joL9O5RRERvIesNr07ignLwWih5WkA" />
-                <div>
-                  <p class="font-body-sm text-body-sm font-medium text-on-surface leading-tight">Rahul Verma</p>
-                  <p class="text-xs text-on-surface-variant">Project Lead &bull; 29 answers</p>
-                </div>
-              </div>
-            </div>
           </div>
         </aside>
 
@@ -186,10 +154,46 @@ import { ApiService } from '../../services/api.service';
   `
 })
 export class TipsComponent implements OnInit {
-  posts: any[] = [];
+  posts: any[] = [
+    {
+      id: 1,
+      title: 'First Week Setup',
+      content: "Don't hesitate to ask questions. Everyone was a beginner once! Reach out to your assigned buddy for quick clarifications on internal jargon.",
+      authorName: 'Sarah Johnson',
+      postType: 'tip'
+    },
+    {
+      id: 2,
+      title: 'Code Review Best Practices',
+      content: 'When reviewing code, focus on logic and maintainability first, style second. Always be constructive and ask questions rather than making demands.',
+      authorName: 'Michael Chen',
+      postType: 'tip'
+    },
+    {
+      id: 3,
+      title: 'Understanding Our Architecture',
+      content: 'Start by tracing a single user request from the UI down to the database. Build your mental model vertically first, then horizontally.',
+      authorName: 'Emily Rodriguez',
+      postType: 'tip'
+    },
+    {
+      id: 4,
+      title: 'Meeting Etiquette',
+      content: 'When joining large virtual meetings, remain on mute unless called upon, but try to have your camera on for the first 5 minutes to establish a personal connection.',
+      authorName: 'David Martinez',
+      postType: 'tip'
+    },
+    {
+      id: 5,
+      title: 'Documentation Tips',
+      content: 'Always update the README when making architectural changes. Future you (and your teammates) will thank you for clear documentation.',
+      authorName: 'Priya Sharma',
+      postType: 'tip'
+    }
+  ];
   searchTerm = '';
 
-  constructor(private api: ApiService, private cdr: ChangeDetectorRef, private router: Router) {}
+  constructor(private cdr: ChangeDetectorRef, private router: Router) {}
 
   get filteredPosts() {
     if (!this.searchTerm) return this.posts;
@@ -200,12 +204,7 @@ export class TipsComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-    this.api.getPosts('tip').subscribe((x: any) => {
-      this.posts = x;
-      this.cdr.markForCheck();
-    });
-  }
+  ngOnInit() {}
 
   navigateToQna() {
     this.router.navigate(['/qna']);

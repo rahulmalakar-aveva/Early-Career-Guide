@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ApiService } from '../../services/api.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-links',
@@ -63,7 +61,7 @@ import { Observable } from 'rxjs';
 
           <!-- Dynamic Cards from API -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a *ngFor="let l of filteredLinks$ | async"
+            <a *ngFor="let l of filteredLinks"
                  [href]="l.url"
                  target="_blank"
                  class="bg-surface-container-lowest rounded-lg p-6 shadow-[0px_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/20 flex flex-col h-full hover:shadow-[0px_8px_24px_rgba(0,0,0,0.1)] transition-shadow cursor-pointer group">
@@ -105,14 +103,76 @@ import { Observable } from 'rxjs';
   `
 })
 export class LinksComponent {
-  links$: Observable<any[]>;
+  links = [
+    {
+      id: 1,
+      title: 'AVEVA Products',
+      description: "Explore AVEVA's comprehensive product portfolio and solutions",
+      url: 'https://www.aveva.com/en/products/',
+      category: 'Getting Started'
+    },
+    {
+      id: 2,
+      title: 'Mission and Values',
+      description: "Learn about AVEVA's mission, vision, and core values",
+      url: 'https://www.aveva.com/en/about/about-aveva/mission-and-values/',
+      category: 'Getting Started'
+    },
+    {
+      id: 3,
+      title: 'Confluence Wiki',
+      description: 'Internal documentation and team wikis',
+      url: 'https://confluence.aveva.com',
+      category: 'Tools & Systems'
+    },
+    {
+      id: 4,
+      title: 'GitHub Enterprise',
+      description: 'Source code repositories and CI/CD pipelines',
+      url: 'https://github.aveva.com',
+      category: 'Tools & Systems'
+    },
+    {
+      id: 5,
+      title: 'Onboarding Guide',
+      description: 'Your complete guide to surviving and thriving in your first 30 days',
+      url: 'https://aveva.oak.com/Home/Index/efd5f51d-6268-4705-9e0c-dd6453532b40',
+      category: 'Getting Started'
+    },
+    {
+      id: 6,
+      title: 'HR Portal',
+      description: 'HR services and employee self-service portal',
+      url: 'https://aveva.service-now.com/esc',
+      category: 'HR & Policies'
+    },
+    {
+      id: 7,
+      title: 'AVEVA Learning Platform',
+      description: 'Official AVEVA training courses and certifications',
+      url: 'https://industrialtraining.aveva.com/wonderware/portal/catalog.cfm?calendarID=145',
+      category: 'Training & Learning'
+    },
+    {
+      id: 8,
+      title: 'IT Support',
+      description: 'Submit tickets for hardware, software, and access issues',
+      url: 'https://aveva.service-now.com/sp',
+      category: 'Tools & Systems'
+    }
+  ];
+  
   searchTerm = '';
 
-  get filteredLinks$() {
-    return this.links$;
-  }
-
-  constructor(private api: ApiService) {
-    this.links$ = this.api.getLinks();
+  get filteredLinks() {
+    if (!this.searchTerm) {
+      return this.links;
+    }
+    const term = this.searchTerm.toLowerCase();
+    return this.links.filter(link => 
+      link.title.toLowerCase().includes(term) || 
+      link.description.toLowerCase().includes(term) ||
+      link.category.toLowerCase().includes(term)
+    );
   }
 }

@@ -11,4 +11,5 @@ public class AppDbContext : DbContext
     public DbSet<BlogPost> BlogPosts => Set<BlogPost>();
     public DbSet<UsefulLink> UsefulLinks => Set<UsefulLink>();
     public DbSet<Contact> Contacts => Set<Contact>();
+    public DbSet<Faq> Faqs => Set<Faq>();
 }

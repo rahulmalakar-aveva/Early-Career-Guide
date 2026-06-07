@@ -1,7 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-qna',
@@ -130,37 +129,6 @@ import { ApiService } from '../../services/api.service';
 
         <!-- Right Column: Sidebar -->
         <div class="lg:col-span-4 flex flex-col gap-gutter">
-          <!-- Top Contributors Widget -->
-          <div class="bg-surface-container-lowest rounded-lg p-unit-md shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/20">
-            <h3 class="font-headline-sm text-headline-sm text-on-surface mb-unit-md">Top Contributors</h3>
-            <div class="flex flex-col gap-4">
-              <div class="flex items-center gap-3">
-                <img alt="Alec Johnson avatar" class="w-10 h-10 rounded-full"
-                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjQOI9NKxTBNB9e2jVWY_9nKAtPutyMF656qMVzKlbgI-hhm1FJYJzzRIbUVegSwTRf2lg0L1CCUsHnjSvURD0x1ibdM-U1zyOZjb6YmmnH-gas-kT87WIs7b4ex73dtIUY5_62vc1wtIkDQEYBIvGcpIuGoCEczWIFbtT6im5PmBjnDmnHv9Y19M_U-HPUecUy1M2WbNUT5amrmQS-WYfxoyrLW1WcNLo1Hwkq8uOon60evs-8Xxm5YnmRCFMRdUxV3cIbjGlTw" />
-                <div>
-                  <p class="font-label-md text-label-md text-on-surface">Alec Johnson</p>
-                  <p class="font-label-sm text-label-sm text-on-surface-variant">Senior Engineer &bull; 42 answers</p>
-                </div>
-              </div>
-              <div class="flex items-center gap-3">
-                <img alt="Priya Sharma avatar" class="w-10 h-10 rounded-full"
-                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuALNpdt0DGhjCsprd5_fEb2i2DgSwwhhNULAh066qJo2PFb74vbxgJbHq4guzUskaHoQcz25JR7RVEXmDZ0Sys6vSKw_-lbuRpYfjwZYU25rw3p9uuNmVnon4jQfSLzPcrQ_AW8sf6gPO_T0vvwAyKgqBqGqnXsyfdqcFZ2ebBfXQbqmkofxujb6ksUi6EfRkGB-b9Y6DDmOTKlbTvSbEsiptwueZwibZVUqiQ6nT3c7V8O7I71kC2egGkruhP4gj-wIgsrtoBHlA" />
-                <div>
-                  <p class="font-label-md text-label-md text-on-surface">Priya Sharma</p>
-                  <p class="font-label-sm text-label-sm text-on-surface-variant">Lead Engineer &bull; 38 answers</p>
-                </div>
-              </div>
-              <div class="flex items-center gap-3">
-                <img alt="Rahul Verma avatar" class="w-10 h-10 rounded-full"
-                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsqniX4RKc2KJEFYNKgnhSUFmgoSah5girQmSMmaAHOZUsPnZ-0-4bj01xbLOMGGlNSKuRGt1Z1jwDJcewtCG1O2vgvM9R2YzhNJjhpf8wiZg6TwjbEFnTuUjNpZdpP2AXpS2oR_H4JTaln7Q9AOtKDjXYqYohwv855CFn1ETCrTgHrLgWK4TI72l-NsZscFmm-YO1sNnYr3y4FQR0C-SV6MQqPuhPqY1D9QyD9IuzozM-6yrWZ1ap0bwA_zooPSCq2OeQWEWPqg" />
-                <div>
-                  <p class="font-label-md text-label-md text-on-surface">Rahul Verma</p>
-                  <p class="font-label-sm text-label-sm text-on-surface-variant">Project Lead &bull; 29 answers</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- Ask Anonymously CTA -->
           <div class="bg-surface-container-low rounded-lg p-unit-md border border-outline-variant/30 text-center flex flex-col items-center">
             <span class="material-symbols-outlined text-[32px] text-primary mb-2">visibility_off</span>
@@ -177,17 +145,124 @@ import { ApiService } from '../../services/api.service';
   `
 })
 export class QnaComponent implements OnInit {
-  qnaList: any[] = [];
+  qnaList: any[] = [
+    {
+      id: '1',
+      question: 'How do I get access to GitHub Enterprise?',
+      answer: 'Submit a ticket through the IT Support portal. Access is usually granted within 24 hours. Make sure to include your team name and manager approval.',
+      category: 'Tool Related'
+    },
+    {
+      id: '2',
+      question: 'What is the code review process?',
+      answer: 'All PRs require at least 2 approvals from team members. Reviews should be completed within 24 hours. Use conventional commits and ensure all CI checks pass.',
+      category: 'Process'
+    },
+    {
+      id: '3',
+      question: 'How do I request absence or time off?',
+      answer: 'Navigate to Workday and select "Request Time Off". Fill in the details of your absence request and submit. Your manager will be automatically notified and will approve or deny the request.',
+      category: 'HR'
+    },
+    {
+      id: '4',
+      question: 'Where can I find the API documentation?',
+      answer: 'API documentation is available on Confluence under the Engineering section. You can also find interactive API docs at the /swagger endpoint of each service.',
+      category: 'Tool Related'
+    },
+    {
+      id: '5',
+      question: 'What are the team stand-up times?',
+      answer: 'Daily stand-ups are held at 9:30 AM local time. Check your team calendar for the specific meeting link and any timezone adjustments.',
+      category: 'Process'
+    },
+    {
+      id: '6',
+      question: 'How do I set up my development environment?',
+      answer: 'Follow the onboarding guide on Confluence which includes installing required tools, configuring your IDE, and cloning necessary repositories. Your buddy can help if you encounter any issues.',
+      category: 'Tool Related'
+    },
+    {
+      id: '7',
+      question: 'What is the dress code?',
+      answer: 'We have a business casual dress code. Jeans and casual shirts are acceptable. For client meetings or important presentations, business professional attire is recommended.',
+      category: 'HR'
+    },
+    {
+      id: '8',
+      question: 'How do I report a bug or technical issue?',
+      answer: 'Create a ticket in Jira under your project board. Include steps to reproduce, expected vs actual behavior, and any relevant screenshots or logs. Tag it with the appropriate priority level.',
+      category: 'Process'
+    },
+    {
+      id: '9',
+      question: 'Where can I find my pay stubs and tax documents?',
+      answer: 'Access Workday and navigate to the "Pay" section. All pay stubs, tax forms (W-2, 1099), and benefits information are available there.',
+      category: 'HR'
+    },
+    {
+      id: '10',
+      question: 'How do I get VPN access for remote work?',
+      answer: 'Submit a request through the IT Support portal. You will receive VPN credentials and installation instructions via email within 1-2 business days.',
+      category: 'Tool Related'
+    },
+    {
+      id: '11',
+      question: 'What training resources are available?',
+      answer: 'Access the Learning Platform for online courses, certifications, and training materials. The company also offers reimbursement for external courses with manager approval.',
+      category: 'HR'
+    },
+    {
+      id: '12',
+      question: 'How do I schedule a meeting room?',
+      answer: 'Use Outlook or Google Calendar to book meeting rooms. Search for available rooms by location and capacity, then add them to your meeting invite.',
+      category: 'Process'
+    },
+    {
+      id: '13',
+      question: 'What is the policy for working from home?',
+      answer: 'Most teams follow a hybrid model with 2-3 days in office per week. Check with your manager for your team\'s specific policy and coordinate with your team for in-office days.',
+      category: 'HR'
+    },
+    {
+      id: '14',
+      question: 'How do I submit an expense report?',
+      answer: 'Log into the expense management system (Concur), upload receipts, categorize expenses, and submit for approval. Most reports are processed within 5-7 business days.',
+      category: 'HR'
+    },
+    {
+      id: '15',
+      question: 'Who should I contact for IT support?',
+      answer: 'For urgent issues, call the IT Help Desk. For non-urgent requests, submit a ticket through the IT Support portal or email support@company.com.',
+      category: 'Tool Related'
+    },
+    {
+      id: '16',
+      question: 'How do I access company benefits information?',
+      answer: 'All benefits information including health insurance, 401k, and other perks are available in Workday under the Benefits section. Contact HR for specific questions.',
+      category: 'HR'
+    },
+    {
+      id: '17',
+      question: 'What is the sprint/release cycle?',
+      answer: 'We follow 2-week sprints with sprint planning on Mondays and retrospectives on Fridays. Releases to production typically happen at the end of each sprint.',
+      category: 'Process'
+    },
+    {
+      id: '18',
+      question: 'How do I request new software or tools?',
+      answer: 'Submit a software request through the IT portal with business justification. Standard tools are approved quickly, while specialized software may require manager and security approval.',
+      category: 'Tool Related'
+    }
+  ];
   newQuestion = '';
   searchTerm = '';
   answerInputs: { [id: string]: string } = {};
   showAskForm = false;
 
-  constructor(private api: ApiService, private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef) {}
 
-  ngOnInit() {
-    this.loadQna();
-  }
+  ngOnInit() {}
 
   get filteredList() {
     if (!this.searchTerm) return this.qnaList;
@@ -198,29 +273,31 @@ export class QnaComponent implements OnInit {
     );
   }
 
-  loadQna() {
-    this.api.getQna().subscribe(data => {
-      this.qnaList = data;
-      this.cdr.markForCheck();
-    });
-  }
-
   addQuestion() {
-    this.api.createQna(this.newQuestion).subscribe(() => {
+    if (this.newQuestion.trim()) {
+      this.qnaList.push({
+        id: String(this.qnaList.length + 1),
+        question: this.newQuestion,
+        answer: '',
+        category: 'General'
+      });
       this.newQuestion = '';
       this.showAskForm = false;
-      this.loadQna();
-    });
+      this.cdr.markForCheck();
+    }
   }
 
   submitAnswer(id: string) {
-    this.api.answerQna(id, this.answerInputs[id]).subscribe(() => {
+    const item = this.qnaList.find(q => q.id === id);
+    if (item && this.answerInputs[id]) {
+      item.answer = this.answerInputs[id];
       delete this.answerInputs[id];
-      this.loadQna();
-    });
+      this.cdr.markForCheck();
+    }
   }
 
   remove(id: string) {
-    this.api.deleteQna(id).subscribe(() => this.loadQna());
+    this.qnaList = this.qnaList.filter(q => q.id !== id);
+    this.cdr.markForCheck();
   }
 }
