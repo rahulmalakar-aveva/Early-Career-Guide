@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
     <main class="flex-grow w-full max-w-container-max mx-auto px-gutter py-unit-xl">
       <!-- Header Section -->
       <div class="mb-unit-xl">
-        <h1 class="font-headline-lg text-headline-lg md:font-display-lg md:text-display-lg mb-unit-sm text-on-surface">Q&A Forum</h1>
+        <h1 class="font-display-lg text-display-lg text-primary mb-2">Q&A Forum</h1>
         <p class="font-body-lg text-body-lg text-on-surface-variant">Ask questions. Get answers. Help others.</p>
       </div>
 
