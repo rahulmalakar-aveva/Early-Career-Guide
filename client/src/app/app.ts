@@ -27,7 +27,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
                class="text-surface-variant/80 hover:text-surface-bright transition-colors font-label-md text-label-md hover:bg-surface-variant/10 px-2 py-1 rounded">Q&A</a>
           </nav>
         </div>
-        <div class="flex items-center gap-unit-md text-surface-bright">
+        <!-- <div class="flex items-center gap-unit-md text-surface-bright">
           <button class="hover:bg-surface-variant/10 p-2 rounded-full transition-colors flex items-center justify-center">
             <span class="material-symbols-outlined">notifications</span>
           </button>
@@ -38,7 +38,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
             <img alt="User profile avatar" class="w-full h-full object-cover"
                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDemTNEBdDJaM5l9PlGxHq18KRPCEDXt5rnvcJ8sooqRWo6Mrc0LcT8K7HCFsKpvdYnXyVzQMFQJp0I6Kg3YDoCKj57iBlUWl_rjpuNKgceDSuyX2O26xajQ2K2msUSrjVd0igFpzSB8GPk0WzA5gHtRdZnYDCWy0-VfQCjG5xcRicvloPuqCwyefZDrIKS-YmWDDLqcHodKEhORrrklmkW_6ULP49bxYrWJaShYNGU7oUeBJfUhJKEtkApQi31g-9f11OoHTHqVg" />
           </div>
-        </div>
+        </div> -->
       </div>
     </header>
 
@@ -55,7 +55,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
             <span class="material-symbols-outlined">work</span> Early Career Portal
           </span>
           <p class="font-body-sm text-body-sm text-primary text-center md:text-left">
-            © 2024 Early Career Portal. Empowering the next generation of talent.
+            © 2026 Early Career Portal. Empowering the next generation of talent.
           </p>
         </div>
         <nav class="flex flex-wrap justify-center gap-4 font-label-sm text-label-sm">
