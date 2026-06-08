@@ -7,10 +7,10 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <main class="flex-grow w-full px-gutter max-w-container-max mx-auto py-unit-xl">
+    <main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-unit-xl">
       <!-- Header Section -->
       <div class="mb-10">
-        <h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Resources</h1>
+        <h1 class="font-display-lg text-display-lg text-primary mb-2">Resources</h1>
         <p class="font-body-md text-body-md text-on-surface-variant">Access helpful documents, links and internal resources.</p>
       </div>
 
@@ -155,6 +155,13 @@ export class LinksComponent {
     },
     {
       id: 8,
+      title: 'Workday Learning',
+      description: 'Complete required trainings and explore learning resources in Workday',
+      url: 'https://wd3.myworkday.com/aveva/learning',
+      category: 'Training & Learning'
+    },
+    {
+      id: 9,
       title: 'IT Support',
       description: 'Submit tickets for hardware, software, and access issues',
       url: 'https://aveva.service-now.com/sp',

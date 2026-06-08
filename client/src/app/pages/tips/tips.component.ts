@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
       <!-- Header Section -->
       <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-unit-xl gap-unit-md">
         <div>
-          <h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface mb-2">Q&A Forum &amp; Tips</h1>
+          <h1 class="font-display-lg text-display-lg text-primary mb-2">Survival Guide</h1>
           <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Ask questions, share insights, and discover daily tips to accelerate your onboarding journey.</p>
         </div>
         <button (click)="navigateToQna()" class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg flex items-center gap-2 transition-colors shadow-sm hover:shadow-md">
@@ -55,34 +55,22 @@ import { Router } from '@angular/router';
             </nav>
           </div>
 
-          <!-- Tip of the Day Highlight -->
+            <!-- Values -->
           <div class="glass-card rounded-xl p-unit-md bg-gradient-to-br from-surface-bright to-surface-container-high relative overflow-hidden">
             <div class="absolute -right-4 -top-4 w-24 h-24 bg-tertiary-fixed-dim/20 rounded-full blur-xl"></div>
             <div class="flex items-center gap-2 mb-3">
               <span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
-              <h3 class="font-label-md text-label-md text-on-surface font-bold">Tip of the Day</h3>
+              <h3 class="font-label-md text-label-md text-on-surface font-bold">Values</h3>
             </div>
-            <h4 class="font-headline-sm text-headline-sm text-primary mb-2">First Week Setup</h4>
-            <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Don't hesitate to ask questions. Everyone was a beginner once! Reach out to your assigned buddy for quick clarifications on internal jargon.</p>
-            <a class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline cursor-pointer">
-              Read more <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
-            </a>
+            <h4 class="font-headline-sm text-headline-sm text-primary mb-2">Impact</h4>
+            <h4 class="font-headline-sm text-headline-sm text-primary mb-2">Aspiration</h4>
+            <h4 class="font-headline-sm text-headline-sm text-primary mb-2">Curiosity</h4>
+            <h4 class="font-headline-sm text-headline-sm text-primary mb-2">Trust</h4>
           </div>
         </aside>
 
         <!-- Main Feed Column -->
         <div class="lg:col-span-9 flex flex-col gap-unit-md">
-          <!-- Feed Sorting -->
-          <div class="flex items-center justify-between border-b border-outline-variant/30 pb-2 mb-2">
-            <div class="flex gap-4">
-              <button class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-2 -mb-[10px]">Recent</button>
-              <button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors pb-2">Most Helpful</button>
-              <button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors pb-2">Unanswered</button>
-            </div>
-            <button class="text-on-surface-variant hover:text-on-surface flex items-center gap-1 text-sm">
-              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">filter_list</span> Filter
-            </button>
-          </div>
 
           <!-- Dynamic Tip Cards from API -->
           <div *ngFor="let p of filteredPosts"
