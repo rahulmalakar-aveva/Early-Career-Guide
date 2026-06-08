@@ -38,4 +38,12 @@ export class ApiService {
   createContact(name: string, email: string) {
     return this.http.post<any>(`${this.base}/contacts`, { name, email });
   }
+
+  getFaqs() {
+    return this.http.get<any[]>(`${this.base}/faqs`);
+  }
+
+  getFaqsByCategory(category: string) {
+    return this.http.get<any[]>(`${this.base}/faqs/category/${category}`);
+  }
 }
