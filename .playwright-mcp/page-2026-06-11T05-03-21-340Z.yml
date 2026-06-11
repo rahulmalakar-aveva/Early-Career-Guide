@@ -1,0 +1,148 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link "work Early Career Portal" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]: work
+          - text: Early Career Portal
+        - navigation [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: /
+          - link "Survival Guide" [ref=e10] [cursor=pointer]:
+            - /url: /tips
+          - link "Resources" [ref=e11] [cursor=pointer]:
+            - /url: /links
+          - link "Peer Sessions" [ref=e12] [cursor=pointer]:
+            - /url: /questions
+          - link "Q&A" [ref=e13] [cursor=pointer]:
+            - /url: /qna
+      - button "lock" [ref=e15] [cursor=pointer]:
+        - generic [ref=e16]: lock
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - heading "Resources" [level=1] [ref=e21]
+      - paragraph [ref=e22]: Access helpful documents, links and internal resources.
+    - generic [ref=e23]:
+      - complementary [ref=e24]:
+        - heading "Categories" [level=3] [ref=e25]
+        - navigation [ref=e26]:
+          - generic [ref=e27] [cursor=pointer]:
+            - generic [ref=e28]: folder
+            - generic [ref=e29]: All Resources
+          - generic [ref=e30] [cursor=pointer]:
+            - generic [ref=e31]: link
+            - generic [ref=e32]: Development
+          - generic [ref=e33] [cursor=pointer]:
+            - generic [ref=e34]: link
+            - generic [ref=e35]: Documentation
+          - generic [ref=e36] [cursor=pointer]:
+            - generic [ref=e37]: link
+            - generic [ref=e38]: HR
+          - generic [ref=e39] [cursor=pointer]:
+            - generic [ref=e40]: link
+            - generic [ref=e41]: IT
+          - generic [ref=e42] [cursor=pointer]:
+            - generic [ref=e43]: link
+            - generic [ref=e44]: Learning
+          - generic [ref=e45] [cursor=pointer]:
+            - generic [ref=e46]: link
+            - generic [ref=e47]: Onboarding
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]: search
+          - textbox "Search resources..." [ref=e51]
+        - generic [ref=e52]:
+          - link "link Onboarding Guide Your complete guide to surviving and thriving in your first 30 days Onboarding View Resource arrow_forward" [ref=e53] [cursor=pointer]:
+            - /url: https://aveva.oak.com/Home/Index/efd5f51d-6268-4705-9e0c-dd6453532b40
+            - generic [ref=e54]:
+              - generic [ref=e56]: link
+              - generic [ref=e57]:
+                - heading "Onboarding Guide" [level=3] [ref=e58]
+                - paragraph [ref=e59]: Your complete guide to surviving and thriving in your first 30 days
+                - generic [ref=e60]: Onboarding
+            - generic [ref=e61]:
+              - generic [ref=e62]: View Resource
+              - generic [ref=e63]: arrow_forward
+          - link "link IT Support Raise tickets for hardware, software, and access issues IT View Resource arrow_forward" [ref=e64] [cursor=pointer]:
+            - /url: https://itsupport.aveva.com
+            - generic [ref=e65]:
+              - generic [ref=e67]: link
+              - generic [ref=e68]:
+                - heading "IT Support" [level=3] [ref=e69]
+                - paragraph [ref=e70]: Raise tickets for hardware, software, and access issues
+                - generic [ref=e71]: IT
+            - generic [ref=e72]:
+              - generic [ref=e73]: View Resource
+              - generic [ref=e74]: arrow_forward
+          - link "link GitHub Enterprise Source code repositories and CI/CD pipelines Development View Resource arrow_forward" [ref=e75] [cursor=pointer]:
+            - /url: https://github.aveva.com
+            - generic [ref=e76]:
+              - generic [ref=e78]: link
+              - generic [ref=e79]:
+                - heading "GitHub Enterprise" [level=3] [ref=e80]
+                - paragraph [ref=e81]: Source code repositories and CI/CD pipelines
+                - generic [ref=e82]: Development
+            - generic [ref=e83]:
+              - generic [ref=e84]: View Resource
+              - generic [ref=e85]: arrow_forward
+          - link "link Company Handbook Policies, benefits, and everything you need to know Onboarding View Resource arrow_forward" [ref=e86] [cursor=pointer]:
+            - /url: https://handbook.aveva.com
+            - generic [ref=e87]:
+              - generic [ref=e89]: link
+              - generic [ref=e90]:
+                - heading "Company Handbook" [level=3] [ref=e91]
+                - paragraph [ref=e92]: Policies, benefits, and everything you need to know
+                - generic [ref=e93]: Onboarding
+            - generic [ref=e94]:
+              - generic [ref=e95]: View Resource
+              - generic [ref=e96]: arrow_forward
+          - link "link Confluence Wiki Internal documentation and team wikis Documentation View Resource arrow_forward" [ref=e97] [cursor=pointer]:
+            - /url: https://confluence.aveva.com
+            - generic [ref=e98]:
+              - generic [ref=e100]: link
+              - generic [ref=e101]:
+                - heading "Confluence Wiki" [level=3] [ref=e102]
+                - paragraph [ref=e103]: Internal documentation and team wikis
+                - generic [ref=e104]: Documentation
+            - generic [ref=e105]:
+              - generic [ref=e106]: View Resource
+              - generic [ref=e107]: arrow_forward
+          - link "link HR Portal Leave requests, payslips, and HR services HR View Resource arrow_forward" [ref=e108] [cursor=pointer]:
+            - /url: https://hr.aveva.com
+            - generic [ref=e109]:
+              - generic [ref=e111]: link
+              - generic [ref=e112]:
+                - heading "HR Portal" [level=3] [ref=e113]
+                - paragraph [ref=e114]: Leave requests, payslips, and HR services
+                - generic [ref=e115]: HR
+            - generic [ref=e116]:
+              - generic [ref=e117]: View Resource
+              - generic [ref=e118]: arrow_forward
+          - link "link AVEVA Learning Platform Official AVEVA training courses and certifications Learning View Resource arrow_forward" [ref=e119] [cursor=pointer]:
+            - /url: https://learning.aveva.com
+            - generic [ref=e120]:
+              - generic [ref=e122]: link
+              - generic [ref=e123]:
+                - heading "AVEVA Learning Platform" [level=3] [ref=e124]
+                - paragraph [ref=e125]: Official AVEVA training courses and certifications
+                - generic [ref=e126]: Learning
+            - generic [ref=e127]:
+              - generic [ref=e128]: View Resource
+              - generic [ref=e129]: arrow_forward
+  - contentinfo [ref=e130]:
+    - generic [ref=e131]:
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - generic [ref=e134]: work
+          - text: Early Career Portal
+        - paragraph [ref=e135]: © 2026 Early Career Portal. Empowering the next generation of talent.
+      - navigation [ref=e136]:
+        - link "Privacy Policy" [ref=e137] [cursor=pointer]:
+          - /url: "#"
+        - link "Terms of Service" [ref=e138] [cursor=pointer]:
+          - /url: "#"
+        - link "Accessibility" [ref=e139] [cursor=pointer]:
+          - /url: "#"
+        - link "Feedback" [ref=e140] [cursor=pointer]:
+          - /url: "#"

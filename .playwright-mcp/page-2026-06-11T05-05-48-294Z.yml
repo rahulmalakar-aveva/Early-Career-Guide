@@ -1,0 +1,57 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link "work Early Career Portal" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]: work
+          - text: Early Career Portal
+        - navigation [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: /
+          - link "Survival Guide" [ref=e10] [cursor=pointer]:
+            - /url: /tips
+          - link "Resources" [ref=e11] [cursor=pointer]:
+            - /url: /links
+          - link "Peer Sessions" [ref=e12] [cursor=pointer]:
+            - /url: /questions
+          - link "Q&A" [ref=e13] [cursor=pointer]:
+            - /url: /qna
+      - button "lock" [ref=e15] [cursor=pointer]:
+        - generic [ref=e16]: lock
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - heading "Q&A Forum" [level=1] [ref=e21]
+      - paragraph [ref=e22]: Ask questions. Get answers. Help others.
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]: search
+        - textbox "Search questions..." [ref=e26]
+      - button "add Ask Question" [ref=e27] [cursor=pointer]:
+        - generic [ref=e28]: add
+        - text: Ask Question
+    - generic [ref=e29]:
+      - generic [ref=e32]:
+        - generic [ref=e33]: forum
+        - paragraph [ref=e34]: No questions yet. Be the first to ask!
+      - generic [ref=e36]:
+        - generic [ref=e37]: visibility_off
+        - heading "Ask Anonymously" [level=3] [ref=e38]
+        - paragraph [ref=e39]: Feel free to ask questions without your name attached.
+        - button "Ask Question" [ref=e40] [cursor=pointer]
+  - contentinfo [ref=e41]:
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - generic [ref=e45]: work
+          - text: Early Career Portal
+        - paragraph [ref=e46]: © 2026 Early Career Portal. Empowering the next generation of talent.
+      - navigation [ref=e47]:
+        - link "Privacy Policy" [ref=e48] [cursor=pointer]:
+          - /url: "#"
+        - link "Terms of Service" [ref=e49] [cursor=pointer]:
+          - /url: "#"
+        - link "Accessibility" [ref=e50] [cursor=pointer]:
+          - /url: "#"
+        - link "Feedback" [ref=e51] [cursor=pointer]:
+          - /url: "#"

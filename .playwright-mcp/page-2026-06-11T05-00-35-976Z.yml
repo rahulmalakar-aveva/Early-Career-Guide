@@ -1,0 +1,70 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link "work Early Career Portal" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]: work
+          - text: Early Career Portal
+        - navigation [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: /
+          - link "Survival Guide" [ref=e10] [cursor=pointer]:
+            - /url: /tips
+          - link "Resources" [ref=e11] [cursor=pointer]:
+            - /url: /links
+          - link "Peer Sessions" [ref=e12] [cursor=pointer]:
+            - /url: /questions
+          - link "Q&A" [ref=e13] [cursor=pointer]:
+            - /url: /qna
+      - button "lock" [ref=e15] [cursor=pointer]:
+        - generic [ref=e16]: lock
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - heading "Peer Sessions" [level=1] [ref=e21]
+      - paragraph [ref=e22]: Scheduled team meetings — join with one click.
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e27]:
+          - img [ref=e29]
+          - generic [ref=e35]: Microsoft Teams
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - heading "Tool Walkthrough" [level=3] [ref=e38]
+            - paragraph [ref=e39]:
+              - generic [ref=e40]: video_call
+              - text: Teams Meeting
+          - link "video_call Join Session" [ref=e42] [cursor=pointer]:
+            - /url: https://teams.microsoft.com/l/meetup-join/placeholder1
+            - generic [ref=e43]: video_call
+            - text: Join Session
+      - generic [ref=e44]:
+        - generic [ref=e47]:
+          - img [ref=e49]
+          - generic [ref=e55]: Microsoft Teams
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - heading "Ask Me Anything" [level=3] [ref=e58]
+            - paragraph [ref=e59]:
+              - generic [ref=e60]: video_call
+              - text: Teams Meeting
+          - link "video_call Join Session" [ref=e62] [cursor=pointer]:
+            - /url: https://teams.microsoft.com/l/meetup-join/placeholder2
+            - generic [ref=e63]: video_call
+            - text: Join Session
+  - contentinfo [ref=e64]:
+    - generic [ref=e65]:
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - generic [ref=e68]: work
+          - text: Early Career Portal
+        - paragraph [ref=e69]: © 2026 Early Career Portal. Empowering the next generation of talent.
+      - navigation [ref=e70]:
+        - link "Privacy Policy" [ref=e71] [cursor=pointer]:
+          - /url: "#"
+        - link "Terms of Service" [ref=e72] [cursor=pointer]:
+          - /url: "#"
+        - link "Accessibility" [ref=e73] [cursor=pointer]:
+          - /url: "#"
+        - link "Feedback" [ref=e74] [cursor=pointer]:
+          - /url: "#"

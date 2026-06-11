@@ -1,0 +1,53 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link "work Early Career Portal" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7]: work
+          - text: Early Career Portal
+        - navigation [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: /
+          - link "Survival Guide" [ref=e10] [cursor=pointer]:
+            - /url: /tips
+          - link "Resources" [ref=e11] [cursor=pointer]:
+            - /url: /links
+          - link "Peer Sessions" [ref=e12] [cursor=pointer]:
+            - /url: /questions
+          - link "Q&A" [ref=e13] [cursor=pointer]:
+            - /url: /qna
+      - button "lock" [ref=e15] [cursor=pointer]:
+        - generic [ref=e16]: lock
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - heading "Resources" [level=1] [ref=e21]
+      - paragraph [ref=e22]: Access helpful documents, links and internal resources.
+    - generic [ref=e23]:
+      - complementary [ref=e24]:
+        - heading "Categories" [level=3] [ref=e25]
+        - navigation [ref=e26]:
+          - generic [ref=e27] [cursor=pointer]:
+            - generic [ref=e28]: folder
+            - generic [ref=e29]: All Resources
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]: search
+          - textbox "Search resources..." [ref=e33]
+        - generic [ref=e35]: progress_activity
+  - contentinfo [ref=e36]:
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]: work
+          - text: Early Career Portal
+        - paragraph [ref=e41]: © 2026 Early Career Portal. Empowering the next generation of talent.
+      - navigation [ref=e42]:
+        - link "Privacy Policy" [ref=e43] [cursor=pointer]:
+          - /url: "#"
+        - link "Terms of Service" [ref=e44] [cursor=pointer]:
+          - /url: "#"
+        - link "Accessibility" [ref=e45] [cursor=pointer]:
+          - /url: "#"
+        - link "Feedback" [ref=e46] [cursor=pointer]:
+          - /url: "#"

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="EarlyCareersPortal.Api/EarlyCareersPortal.Api.csproj" />
+  <Project Path="EarlyCareersPortal.Application/EarlyCareersPortal.Application.csproj" />
+  <Project Path="EarlyCareersPortal.Domain/EarlyCareersPortal.Domain.csproj" />
+  <Project Path="EarlyCareersPortal.Infrastructure/EarlyCareersPortal.Infrastructure.csproj" />
+</Solution>

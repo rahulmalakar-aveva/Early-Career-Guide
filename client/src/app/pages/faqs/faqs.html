@@ -1,0 +1,97 @@
+<main class="flex-grow w-full px-gutter max-w-container-max mx-auto py-unit-xl">
+  <!-- Header Section -->
+  <div class="mb-10">
+    <h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Frequently Asked Questions</h1>
+    <p class="font-body-md text-body-md text-on-surface-variant">Find answers to common questions about working at AVEVA as an early career professional.</p>
+  </div>
+
+  <div class="flex flex-col md:flex-row gap-8">
+    <!-- Sidebar / Categories -->
+    <aside class="w-full md:w-64 flex-shrink-0">
+      <h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4 px-3">Categories</h3>
+      <nav class="space-y-1">
+        <button 
+          *ngFor="let category of categories()"
+          (click)="selectCategory(category)"
+          [class.bg-surface-container]="selectedCategory() === category"
+          [class.text-primary]="selectedCategory() === category"
+          [class.font-medium]="selectedCategory() === category"
+          [class.text-on-surface-variant]="selectedCategory() !== category"
+          class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-surface-container-low transition-colors text-left">
+          <span class="material-symbols-outlined">
+            {{ category === 'All' ? 'list' : 'folder' }}
+          </span>
+          <span class="font-body-sm text-body-sm">{{ category }}</span>
+        </button>
+      </nav>
+    </aside>
+
+    <!-- FAQs Accordion -->
+    <div class="flex-grow">
+      <div class="space-y-4">
+        <div *ngFor="let faq of filteredFaqs()"
+             class="bg-surface-container-lowest rounded-lg border border-outline-variant/20 overflow-hidden transition-all"
+             [class.shadow-md]="isExpanded(faq.id)">
+          
+          <!-- Question Header -->
+          <button 
+            (click)="toggleFaq(faq.id)"
+            class="w-full px-6 py-4 flex items-start justify-between gap-4 hover:bg-surface-container-low transition-colors text-left">
+            <div class="flex-1">
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">{{ faq.question }}</h3>
+              <span class="inline-block px-2 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">
+                {{ faq.category }}
+              </span>
+            </div>
+            <span class="material-symbols-outlined text-on-surface-variant transition-transform"
+                  [class.rotate-180]="isExpanded(faq.id)">
+              expand_more
+            </span>
+          </button>
+
+          <!-- Answer Content (Expandable) -->
+          <div *ngIf="isExpanded(faq.id)" 
+               class="px-6 pb-4 pt-2 border-t border-outline-variant/20 bg-surface-container-low/30">
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              {{ faq.answer }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Empty State -->
+        <div *ngIf="filteredFaqs().length === 0" 
+             class="text-center py-12">
+          <span class="material-symbols-outlined text-6xl text-on-surface-variant/30 mb-4 block">
+            question_answer
+          </span>
+          <p class="font-body-lg text-body-lg text-on-surface-variant">
+            No FAQs found in this category
+          </p>
+        </div>
+      </div>
+
+      <!-- Help Section -->
+      <div class="mt-8 bg-primary/5 rounded-lg p-6 border border-primary/20">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-primary text-3xl">info</span>
+          <div>
+            <h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">Can't find what you're looking for?</h4>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mb-3">
+              If your question isn't answered here, feel free to reach out to HR or check the Q&A section.
+            </p>
+            <div class="flex gap-3">
+              <a routerLink="/qna" class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-lg hover:bg-primary-container transition-colors">
+                <span class="material-symbols-outlined text-sm">forum</span>
+                Ask a Question
+              </a>
+              <a routerLink="/contacts" class="inline-flex items-center gap-2 border border-primary text-primary font-label-md text-label-md px-4 py-2 rounded-lg hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-sm">contact_page</span>
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
