@@ -29,7 +29,7 @@ import { SessionsService, Session } from '../../services/sessions.service';
         </div>
         <div class="flex-1 bg-surface-container min-h-[300px] relative hidden md:block">
           <img alt="Team Collaboration" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply"
-               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmC3b8Z4ahcKwagInKuLsI0OBJWYTwG0J13MDSsvqxO5WzdN_O7L_XVh-HBC_YkvXPT9Nm3MAHiPPuJrl5OPhhS0GdEDdOGpiAG1pod-myJFU8SEUtJRmqO9izzV_JvdZmSdDiVYhMfWIkb4s5BY16PalsD_V5pzcpYxf3X5dcz5ALX4i27i_pgdjccRRvgSO61cOtMv8SJVn1FnrcUPUYXYPy-pi1B6S0l_hD6kuGyKlQYOkzOcvxlFbIO7jQ1kOhpv8Cv9oL6w" />
+               src="https://www.aveva.com/content/dam/aveva/images/about/w009/W009-Our-heritage-664x498-25-01.jpg" />
         </div>
       </section>
 

@@ -10,27 +10,27 @@ import { AdminService } from './services/admin.service';
   imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, FormsModule],
   template: `
     <!-- TopNavBar -->
-    <header class="bg-on-surface fixed w-full top-0 h-16 shadow-md z-50">
+    <header class="bg-white fixed w-full top-0 h-16 shadow-sm border-b border-outline-variant/30 z-50">
       <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
         <div class="flex items-center gap-unit-xl">
-          <a class="font-headline-md text-headline-md font-bold text-surface-bright flex items-center gap-2" routerLink="/">
-            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">work</span>
-            Early Career Portal
+          <a class="font-headline-md text-headline-md font-bold text-primary flex items-center gap-3" routerLink="/">
+            <img src="/Aveva_logo.png" alt="AVEVA Logo" class="h-14 w-auto object-contain" />
+            <span class="hidden sm:inline">Early Career Portal</span>
           </a>
           <nav class="hidden md:flex gap-unit-lg h-full items-center">
-            <a routerLink="/" routerLinkActive="border-b-2 border-secondary-fixed pb-1 font-bold opacity-90" [routerLinkActiveOptions]="{exact: true}"
-               class="text-surface-variant/80 hover:text-surface-bright transition-colors font-label-md text-label-md hover:bg-surface-variant/10 px-2 py-1 rounded">Home</a>
-            <a routerLink="/tips" routerLinkActive="border-b-2 border-secondary-fixed pb-1 font-bold opacity-90"
-               class="text-surface-variant/80 hover:text-surface-bright transition-colors font-label-md text-label-md hover:bg-surface-variant/10 px-2 py-1 rounded">Survival Guide</a>
-            <a routerLink="/links" routerLinkActive="border-b-2 border-secondary-fixed pb-1 font-bold opacity-90"
-               class="text-surface-variant/80 hover:text-surface-bright transition-colors font-label-md text-label-md hover:bg-surface-variant/10 px-2 py-1 rounded">Resources</a>
-            <a routerLink="/questions" routerLinkActive="border-b-2 border-secondary-fixed pb-1 font-bold opacity-90"
-               class="text-surface-variant/80 hover:text-surface-bright transition-colors font-label-md text-label-md hover:bg-surface-variant/10 px-2 py-1 rounded">Peer Sessions</a>
-            <a routerLink="/qna" routerLinkActive="border-b-2 border-secondary-fixed pb-1 font-bold opacity-90"
-               class="text-surface-variant/80 hover:text-surface-bright transition-colors font-label-md text-label-md hover:bg-surface-variant/10 px-2 py-1 rounded">Q&A</a>
+            <a routerLink="/" routerLinkActive="border-b-2 border-primary pb-1 font-bold" [routerLinkActiveOptions]="{exact: true}"
+               class="text-primary/70 hover:text-primary transition-colors font-label-md text-label-md hover:bg-primary/5 px-2 py-1 rounded">Home</a>
+            <a routerLink="/tips" routerLinkActive="border-b-2 border-primary pb-1 font-bold"
+               class="text-primary/70 hover:text-primary transition-colors font-label-md text-label-md hover:bg-primary/5 px-2 py-1 rounded">Survival Guide</a>
+            <a routerLink="/links" routerLinkActive="border-b-2 border-primary pb-1 font-bold"
+               class="text-primary/70 hover:text-primary transition-colors font-label-md text-label-md hover:bg-primary/5 px-2 py-1 rounded">Resources</a>
+            <a routerLink="/questions" routerLinkActive="border-b-2 border-primary pb-1 font-bold"
+               class="text-primary/70 hover:text-primary transition-colors font-label-md text-label-md hover:bg-primary/5 px-2 py-1 rounded">Peer Sessions</a>
+            <a routerLink="/qna" routerLinkActive="border-b-2 border-primary pb-1 font-bold"
+               class="text-primary/70 hover:text-primary transition-colors font-label-md text-label-md hover:bg-primary/5 px-2 py-1 rounded">Q&A</a>
             @if (adminService.isAdmin()) {
-              <a routerLink="/admin" routerLinkActive="border-b-2 border-secondary-fixed pb-1 font-bold opacity-90"
-                 class="text-yellow-300 hover:text-yellow-100 transition-colors font-label-md text-label-md hover:bg-surface-variant/10 px-2 py-1 rounded flex items-center gap-1">
+              <a routerLink="/admin" routerLinkActive="border-b-2 border-primary pb-1 font-bold"
+                 class="text-yellow-600 hover:text-yellow-800 transition-colors font-label-md text-label-md hover:bg-primary/5 px-2 py-1 rounded flex items-center gap-1">
                 <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">shield_person</span>
                 Admin
               </a>
@@ -41,18 +41,18 @@ import { AdminService } from './services/admin.service';
         <!-- Admin toggle area -->
         <div class="flex items-center gap-2">
           @if (adminService.isAdmin()) {
-            <span class="hidden sm:flex items-center gap-1.5 bg-yellow-500/20 border border-yellow-500/40 text-yellow-300 font-label-sm text-label-sm px-3 py-1.5 rounded-full">
+            <span class="hidden sm:flex items-center gap-1.5 bg-yellow-500/10 border border-yellow-500/40 text-yellow-700 font-label-sm text-label-sm px-3 py-1.5 rounded-full">
               <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">shield_person</span>
               Admin Mode
             </span>
             <button (click)="adminService.logout()"
-                    class="p-2 rounded-full text-surface-variant/80 hover:text-surface-bright hover:bg-surface-variant/10 transition-colors"
+                    class="p-2 rounded-full text-primary/70 hover:text-primary hover:bg-primary/5 transition-colors"
                     title="Exit Admin Mode">
               <span class="material-symbols-outlined text-[20px]">lock_open</span>
             </button>
           } @else {
             <button (click)="showLoginModal = true"
-                    class="p-2 rounded-full text-surface-variant/80 hover:text-surface-bright hover:bg-surface-variant/10 transition-colors"
+                    class="p-2 rounded-full text-primary/70 hover:text-primary hover:bg-primary/5 transition-colors"
                     title="Admin Login">
               <span class="material-symbols-outlined text-[20px]">lock</span>
             </button>

@@ -27,8 +27,8 @@ html, body {
 }
 
 .vote-btn:hover {
-  color: #0038b4;
-  background-color: #dce9ff;
+  color: #550D5F;
+  background-color: #e3d3e5;
 }
 
 /* Utility to make an element span the full viewport width while inside a centered container */
